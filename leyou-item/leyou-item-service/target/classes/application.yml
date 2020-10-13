@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    url: jdbc:mysql:///hm49
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 #心跳时间
+    lease-expiration-duration-in-seconds: 30 #过期时间
+mybatis:
+  type-aliases-package: com.leyou.item.pojo    #在leyou-item-interface模块下创建该包，因为已经在pom文件中依赖该包，故可以直接引用
